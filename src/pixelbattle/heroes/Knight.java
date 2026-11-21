@@ -36,6 +36,11 @@ public class Knight extends Hero {
         //   });
     }
 
-    // TODO 4: пасивка «Важка броня» — перевизначте modifyIncomingDamage:
-    //   лицар отримує на 4 шкоди менше (але не менше 0).
+    @Override
+    protected int modifyIncomingDamage(int damage) {
+        if (damage <= 4) {
+            return 0;
+        }
+        return damage - 4;
+    }
 }
